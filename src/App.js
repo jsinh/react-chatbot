@@ -3,7 +3,24 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  render() {
+  
+  constructor(props) {
+		super(props);
+    this.state ={
+      agsEntityid: '',
+      agsSomemoreproperty:''
+    }
+}
+  componentDidMount() {
+  const data = window._DEFAULT_DATA;
+  this.setState({
+    agsEntityid: data.agsEntityid,
+    agsSomemoreproperty: data.agsSomemoreproperty
+  })    
+}
+  render()
+  {
+    const {agsEntityid,agsSomemoreproperty}  = this.state
     return (
       <div className="App">
         <header className="App-header">
@@ -17,7 +34,9 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+          this data is coming from index.html<br/>
+          agsEntityid  = {agsEntityid}<br/>
+          agsSomemoreproperty = {agsSomemoreproperty}
           </a>
         </header>
       </div>
