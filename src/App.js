@@ -12,10 +12,10 @@ class App extends Component {
     }
 }
   componentDidMount() {
-  const data = window._DEFAULT_DATA;
+  // const data = window._DEFAULT_DATA;
   this.setState({
-    agsEntityid: data.agsEntityid,
-    agsSomemoreproperty: data.agsSomemoreproperty
+    agsEntityid: window.document.getElementsByTagName('div')[0].getAttribute('ags-entityid'),
+    agsSomemoreproperty: window.document.getElementsByTagName('div')[0].getAttribute('ags-somemoreproperty')
   })    
 }
   render()
